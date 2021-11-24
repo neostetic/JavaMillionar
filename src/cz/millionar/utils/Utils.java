@@ -11,8 +11,8 @@ public class Utils {
         return sc.nextInt();
     }
     public static Random ra = new Random();
-    public static int random(int lenght) {
-        return ra.nextInt(lenght);
+    public static int random(int length) {
+        return ra.nextInt(length);
     }
 
 }
