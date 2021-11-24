@@ -2,7 +2,7 @@ package cz.millionar.questions;
 
 import cz.millionar.ui.Ui;
 
-public class QuestionImp implements Question{
+public class QuestionImp implements Question {
 
     Ui thisUi;
 
@@ -18,6 +18,7 @@ public class QuestionImp implements Question{
     int rightAnswer;
 
     public QuestionImp(String questionText, String answer1, String answer2, String answer3, String answer4, int rightAnswer) {
+        this(new Ui());
         this.questionText = questionText;
         this.answer1 = answer1;
         this.answer2 = answer2;
@@ -52,7 +53,7 @@ public class QuestionImp implements Question{
 
     @Override
     public void start() {
-        thisUi.print();
+        thisUi.print(this);
     }
 
     @Override
@@ -62,6 +63,6 @@ public class QuestionImp implements Question{
 
     @Override
     public void wrong() {
-        thisUi.wrong();
+        thisUi.wrong(this);
     }
 }
