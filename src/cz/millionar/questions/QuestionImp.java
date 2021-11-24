@@ -16,6 +16,7 @@ public class QuestionImp implements Question {
     String answer3;
     String answer4;
     int rightAnswer;
+    boolean win;
 
     public QuestionImp(String questionText, String answer1, String answer2, String answer3, String answer4, int rightAnswer) {
         this(new Ui());
@@ -51,18 +52,24 @@ public class QuestionImp implements Question {
         return rightAnswer;
     }
 
+    public boolean isWin() {
+        return win;
+    }
+
     @Override
     public void start() {
         thisUi.print(this);
     }
 
     @Override
-    public void right() {
-        thisUi.right();
+    public void wrong() {
+        thisUi.wrong(this);
+        win = false;
     }
 
     @Override
-    public void wrong() {
-        thisUi.wrong(this);
+    public void right() {
+        thisUi.right();
+        win = true;
     }
 }

@@ -23,7 +23,7 @@ public class Ui {
     }
 
     public void right() {
-        System.out.println("\nCorrect!");
+        System.out.println("\nCorrect!\n");
     }
 
 }
